@@ -358,6 +358,37 @@
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
   }
+
+  ul li.task-list-item::before {
+    visibility: hidden;
+  }
+
+  input[type=checkbox] {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 11px;
+    visibility: hidden;
+    margin-left: -25px;
+  }
+
+  input[type=checkbox]:after {
+    content: " ";
+    background-color: transparent;
+    display: inline-block;
+    padding-bottom: 2px;
+    color: #89a7bc;
+    width: 12px;
+    height: 12px;
+    visibility: visible;
+    border: 1px solid #89a7bc;
+    padding-left: 2px;
+    border-radius: 5px;
+    line-height: 15px;
+  }
+  
+  input[type=checkbox]:checked:after {
+    content: "\2714";
+  }
   
   /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
@@ -536,7 +567,6 @@ ul li::before {
     font-size:0.8em;
     padding-right:1em;
 }
-
 
 blockquote {
     border-left:3px solid #afa9e5;
